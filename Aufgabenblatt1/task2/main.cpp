@@ -1,7 +1,8 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
    float price;
    int number;
    float vat;
@@ -12,7 +13,7 @@ int main() {
    cin >> number;
    cin >> vat;
 
-   cout << "Der resultierende Preis liegt bei " << price*number*(1+vat) << "***";
+   cout << "Der resultierende Preis liegt bei " << price * number * (1 + vat) << "***";
 
    return 0;
 }

@@ -7,12 +7,14 @@ int main()
    char curr;
    float amount;
    cin >> curr;
-   cin >> amount; 
-   if(curr == '$'){
-      cout << "Der eingegebene Betrag entspricht " << amount*0.9721 << "€";
+   cin >> amount;
+   if (curr == '$')
+   {
+      cout << "Der eingegebene Betrag entspricht " << amount * 0.9721 << "€";
    }
-   else {
-      cout << "Der eingegebene Betrag entspricht " << amount*1.0287 << "$";
+   else
+   {
+      cout << "Der eingegebene Betrag entspricht " << amount * 1.0287 << "$";
    }
    return 0;
 }

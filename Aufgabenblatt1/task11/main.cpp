@@ -1,7 +1,8 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
    cout << "Bitte geben Sie 5 Werte einer Messreihe ein: ";
    float a, b, c, d, e;
    cin >> a;
@@ -9,6 +10,6 @@ int main() {
    cin >> c;
    cin >> d;
    cin >> e;
-   cout << "Der Durchschnitt entspricht " << (a+b+c+d+e)/5 ;
+   cout << "Der Durchschnitt entspricht " << (a + b + c + d + e) / 5;
    return 0;
 }
