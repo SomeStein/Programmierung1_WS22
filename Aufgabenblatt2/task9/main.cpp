@@ -2,10 +2,11 @@
 using namespace std;
 
 int main() {
-   // H 1 g/mol O 16 g/mol  2 H_2 + O_2 -> 2 H_2O => 1/8 in weight
-   cout << "Bitte geben Sie die Menge an Wasserstoff in Gramm an: ";
-   float weight;
-   cin >> weight;
-   cout << "Es werden " << weight/8 << " Gramm an Sauerstoff für die verbrennung gebraucht.";
+   cout << "Geben Sie den Betrag und die benötigten Versuche ein: ";
+   double amount;
+   int num;
+   cin >> amount >> num;
+   cout << "Gewinn liegt bei " << amount*35 << " Verlust lieght bei " << amount*num;
+   cout << " unterm STrich also " << amount*(35-num);
    return 0;
 }

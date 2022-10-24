@@ -1,14 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
-   cout << "Bitte geben Sie 5 Werte einer Messreihe ein: ";
-   float a, b, c, d, e;
-   cin >> a;
-   cin >> b;
-   cin >> c;
-   cin >> d;
-   cin >> e;
-   cout << "Der Durchschnitt entspricht " << (a+b+c+d+e)/5 ;
-   return 0;
+
+int i,count;
+string checkint;
+double num;
+cin >> num;
+checkint = to_string(num);
+
+for (i = 0; i < checkint.length(); i++) {
+
+if (isdigit(checkint[i]) == false) {
+   if(checkint[i+1] != '0'){
+      count=1;
+      break;
+   }
+
+} else
+count=0;
+
+}
+
+if(count==0)
+cout << " Eine ganze Zahl";
+else
+cout << " Keine ganze Zahl";
 }

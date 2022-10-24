@@ -1,16 +1,12 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-   cout << "Bitte geben sie x als auch Koeffizienten des Polynom 4. Grades ein: ";
-   float x, a, b, c, d, e;
-   cin >> x;
-   cin >> a;
-   cin >> b;
-   cin >> c;
-   cin >> d;
-   cin >> e;
-   cout << "Das Polynom hat an der Stelle " << x << " den Wert " << a + b * x + c * x * x + d * x * x * x + e * x * x * x * x;
-   return 0;
+   cout << "Bitte geben Sie FAssungsvermögen und Bestellmenge in Liter an: ";
+   int n; 
+   double amount;
+   cin >> n >> amount;
+   cout << "Es werden " << ceil(amount/n) << " Fässer benötigt";
 }
