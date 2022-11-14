@@ -38,8 +38,12 @@ int main()
 {
    string test_string;
    char test_char;
-   cin >> test_string >> test_char;
 
-   cout << str_without(test_string,test_char);
- 
+   cout << "Geben Sie einen String und einen Character ein: \n";
+   cin >> test_string;
+   while(cin >> test_char){
+      test_string = str_without(test_string,test_char);
+      cout << test_string << endl;
+   }
+   return 0;
 }
