@@ -1,57 +1,45 @@
 #include <iostream>
+#include <string>
+using namespace std;
 
-/*Sortieren Sie 3 eingelesene double Zahlen ohne Verwendung von logischen Operatoren.
+/*Schreiben Sie eine Funktion, die einen String und ein Zeichen als Parameter erhält
+ und den String retourniert, der entsteht, wenn das Zeichen aus dem String entfernt wird 
+ (man muss das Zeichen nicht explizit aus dem String löschen. Es ist vielleicht einfacher, 
+ einen neuen String als Kopie des Eingangsstrings - Zeichen für Zeichen - 
+ anzulegen und beim Kopieren das zu "löschende" Zeichen einfach zu ignorieren). 
+ Schreiben Sie zum Testen ein Hauptprogramm, das zunächst einen String einliest 
+ und dann immer wieder ein einzelnes Zeichen liest und das Ergebnis ausgibt, 
+ wenn das zuletzt eingegebene Zeichen aus dem String entfernt wird. 
+ Das Programm soll durch Eingabe von EOF beendet werden, z. B.:
+
+Eingabe: KrankeSchwestern
+Eingabe: K
+Ausgabe: rankeSchwestern
+Eingabe: e
+Ausgabe: KrankSchwstrn
+Eingabe:  Ctrl-D
+Programmende
  */
+
+string str_without(string str, char c){
+
+   string sliced_string; int len = str.length();
+
+   for( int i = 0; i < len; i++){
+      char c_current = str[i];
+      if(c != c_current){
+         sliced_string += c_current;
+      }
+   }
+   return sliced_string;
+}
 
 int main()
 {
-   double a, b, c;
+   string test_string;
+   char test_char;
+   cin >> test_string >> test_char;
 
-   std::cin >> a >> b >> c;
-
-   double smallest = a;
-   double biggest = a;
-
-   // sort by absolut value
-
-   if ((int)((smallest / b)))
-   {
-      smallest = b;
-   }
-   if ((int)((smallest / c)))
-   {
-      smallest = c;
-   }
-
-   if ((int)((b / biggest)))
-   {
-      biggest = b;
-   }
-   if ((int)((c / biggest)))
-   {
-      biggest = c;
-   }
-
-   double mid = a + b + c - smallest - biggest;
-
-   // sort by positivity
-
-   // if mid is negative mid becomes smallest, smallest becomes mid
-   if ((int)mid - abs(mid))
-   {
-      double temp = mid;
-      mid = smallest;
-      smallest = temp;
-   }
-
-   // if biggest is negative biggest becomes smallest, smallest becomes mid and mid becomes biggest
-   if ((int)biggest - abs(biggest))
-   {
-      double temp = biggest;
-      biggest = mid;
-      mid = smallest;
-      smallest = temp;
-   }
-
-   std::cout << smallest << " <= " << mid << " <= " << biggest;
+   cout << str_without(test_string,test_char);
+ 
 }
