@@ -1,35 +1,31 @@
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-/*Lesen Sie beliebig viele double Werte (Abschluss mit EOF) ein,
- und geben Sie das Maximum, das Minimum und den Mittelwert
- der eingegebenen Werte aus.*/
+/*Schreiben Sie eine Funktion bool intTest(int n, char c), 
+die prüft, ob die Ziffer c in der Zahl n vorkommt.*/
+
+bool intTest(int n, char c){
+   string digits = to_string(n);
+   int len = digits.length();
+   for (int i = 0; i < len; i++){
+      if(digits[i] == c){
+         return true;
+      }
+   }
+   return false;
+}
 
 int main()
 {
-   double min, max, mean, current, n;
-   cin >> current;
-   min = current;
-   max = current;
-   mean = current;
-   n = 1;
-   while (cin >> current)
-   {
-      if (current < min)
-      {
-         min = current;
-      }
-      if (current > max)
-      {
-         max = current;
-      }
-      mean *= n;
-      mean += current;
-      mean /= (n + 1);
-      n++;
+   cout << "Geben Sie eine Zahl und eine Ziffer ein: " << endl;
+   int n; char c;
+   while(cin >> n >> c){
+      string bool_val; 
+      intTest(n,c)? bool_val = " ist in " : bool_val = " ist nicht in ";
+
+      cout << c << bool_val << n << endl;
    }
-   cout << "min: " << min << endl;
-   cout << "mean: " << mean << endl;
-   cout << "max: " << max << endl;
    return 0;
 }

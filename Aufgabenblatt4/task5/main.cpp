@@ -1,54 +1,28 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-/*Erstellen Sie die Additionstabelle und die Multiplikationstabelle modulo n.
- Die Ausgabe für n=4 könnte zum Beispiel so aussehen:
+/*Schreiben Sei eine Funktion, die einen String als Parameter erhält
+und als Ergebnis den reversierten Eingangsstring (also von hinten nach vorne gelesen) retourniert.*/
 
-Addition
-
-0 	  	1 	  	2 	  	3
-1 		2 		3 		0
-2 		3 		0 		1
-3 		0 		1 		2
-
-
-
-Multiplikation
-
-0 	  	0 	  	0 	  	0
-0 		1 		2 		3
-0 		2 		0 		2
-0 		3 		2 		1*/
-
-void Table(int n, string operation)
+string reverse(string str)
 {
-
-   for (int i = 0; i < n; i++)
+   string output;
+   int len = str.length();
+   for (int i = len - 1; i >= 0; i--)
    {
-      for (int j = 0; j < n; j++)
-      {
-         if (operation == "add")
-         {
-            cout << (i + j) % n << " ";
-         }
-         if (operation == "mult")
-         {
-            cout << (i * j) % n << " ";
-         }
-      }
-      cout << endl;
+      output += str[i];
    }
-   cout << endl;
+   return output;
 }
 
 int main()
 {
-   int n;
-   cin >> n;
-   cout << endl;
-
-   Table(n, "add");
-   Table(n, "mult");
-
+   cout << "Geben Sie einen string ein: " << endl;
+   string test_string;
+   while (cin >> test_string)
+   {
+      cout << reverse(test_string) << endl;
+   }
    return 0;
 }
